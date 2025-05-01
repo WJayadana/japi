@@ -1,0 +1,1447 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Xavier Api",
+    "description": "Welcome to the Xavier Api, your gateway to streamlined and efficient application integration. Designed with simplicity and versatility in mind, Xavier Api empowers developers to effortlessly manage and interact with essential data and functionalities. Whether you're building a web application, mobile app, or integrating with other services, Laurine Api provides a robust foundation for seamless operations.",
+    "contact": {
+      "email": "https://t.me/FVendettaV"
+    },
+    "license": {
+      "name": "API Development Information",
+      "url": "https://whatsapp.com/channel/0029VbACugX6rsQyHw0Wvr1g"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://japi.vercel.app",
+      "description": "Xavier Api"
+    }
+  ],
+  "paths": {
+    "/api/orkut/cekstatus": {
+      "get": {
+        "tags": ["OrderKuota"],
+        "description": "This endpoint is used to check the payment status of OrderKuota. Returns real-time status information.This endpoint is used to check the payment status of OrderKuota. Returns real-time status information.",
+        "parameters": [
+          {
+            "name": "merchant",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keyorkut",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "apiKey",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/orkut/payment": {
+      "get": {
+        "tags": ["OrderKuota"],
+        "description": "This endpoint is used to start the payment process with a nominal amount adjusted for the OrderKuota user's order.This endpoint is used to start the payment process with a nominal amount adjusted for the OrderKuota user's order.",
+        "parameters": [
+          {
+            "name": "amount",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codeqr",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "apiKey",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/splay": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "Splay is a mechanism that allows users to search for music or YouTube videos simply by entering keywords, without needing to manually copy the URL. The system automatically searches for the relevant video using yt-search, retrieves the first video's URL, converts it into a short format (youtu.be), and then downloads it via a downloader API. This makes the search and download process faster and more convenient.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/ytmp4": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "YTDLMP4 stands for YouTube Downloader, a tool used to download videos from YouTube and other websites. Popular implementations include youtube-dl and yt-dlp, which are command-line based and open-source.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/ytmp3": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "YTDLMP3 stands for YouTube Downloader, a tool used to download videos from YouTube and other websites. Popular implementations include youtube-dl and yt-dlp, which are command-line based and open-source.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/videy": {
+      "post": {
+        "tags": ["Downloader"],
+        "description": "Videy Downloader is a tool or service that allows users to download videos from the Videy platform easily. By using Videy Downloader, users can convert video links into downloadable MP4 files, enabling offline viewing without an internet connection.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "default": "enter the link"
+                  }
+                },
+                "required": ["text"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/llama3-8b-8192": {
+      "get": {
+        "tags": ["Artificial Intelligence"],
+        "description": "Llama3-8b-8192 is an advanced AI model with 8 billion parameters, built for natural language processing tasks like text generation, translation, and summarization. With a token length of 8192, it can process a large amount of text efficiently, making it suitable for various AI applications.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/mixtral-8x7b-32768": {
+      "get": {
+        "tags": ["Artificial Intelligence"],
+        "description": "mixtral-8x7b-32768 is a Mixture of Experts (MoE) model by Mistral AI, featuring 8 experts, each with 7 billion parameters, with only 2 experts active per token. The number 32768 represents the supported context length, allowing for longer and more efficient text processing compared to large monolithic models.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/gemini": {
+      "get": {
+        "tags": ["Artificial Intelligence"],
+        "description": "Gemini is an advanced artificial intelligence (AI) model developed by Google DeepMind. It’s designed to understand and generate text, code, images, and more, with multimodal capabilities that allow it to process different types of data simultaneously. Let me know if you’d like to dive deeper!",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/deepseek": {
+      "get": {
+        "tags": ["Artificial Intelligence"],
+        "description": "DeepSeek is an artificial intelligence (AI) model known for its efficiency and cost-effectiveness. It is designed to generate text-based responses and solutions, and has been used in various applications, including chatbots and text-based problem-solving. DeepSeek offers a competitive alternative to other AI models due to its performance and affordability.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/whisper-large-v3": {
+      "get": {
+        "tags": ["Artificial Intelligence"],
+        "description": "Whisper-large-v3 is an automatic speech recognition (ASR) model developed by OpenAI with 1.55 billion parameters. It supports multilingual transcription and speech translation, featuring improved spectrogram input and expanded language support. A faster variant, Whisper-large-v3 Turbo, was later released with optimized decoding layers for better processing speed.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/gemma2-9b-it": {
+      "get": {
+        "tags": ["Artificial Intelligence"],
+        "description": "Gemma 2-9B-IT is an AI model developed by Google with 9 billion parameters, fine-tuned for instruction following. It is based on a decoder-only architecture, trained on 8 trillion tokens, and is suitable for tasks such as text generation, question answering, and natural language processing.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/heckai": {
+      "get": {
+        "tags": ["Artificial Intelligence"],
+        "description": "HeckAI is an artificial intelligence (AI) system developed specifically to predict the outcomes of chemical reactions, particularly in Mizoroki-Heck C-glycosylation. The system applies machine learning algorithms designed to operate with limited data by leveraging knowledge-based chemical descriptors. With this approach, HeckAI can quickly and efficiently provide reaction yield predictions, thereby helping researchers optimize reaction designs without the need for extensive laboratory experiments.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/blackbox": {
+      "get": {
+        "tags": ["Artificial Intelligence"],
+        "description": "Blackbox AI refers to artificial intelligence systems whose internal processes are difficult to understand or explain, even though they produce accurate results. This typically applies to complex models like neural networks, where the decision-making process is not transparent.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/yousearch": {
+      "post": {
+        "tags": ["Artificial Intelligence"],
+        "description": "yousearch.ai is an AI-powered search service that provides search results summarized in Jakarta slang, emojis, and structured references. Users send a search keyword via the API, and the service returns formatted results according to a specific template, ready to be displayed in applications or systems utilizing the API.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "default": "haii"
+                  }
+                },
+                "required": ["text"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/stalk/ffstalk": {
+      "post": {
+        "tags": ["Stalk"],
+        "description": "The ffStalk function is used to retrieve basic information about a Free Fire user (such as the username) from the Dunia Games top-up service. It sends the userId to an API and receives a response containing player details, such as the username, which is then returned as an object.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "default": "1921575755"
+                  }
+                },
+                "required": ["id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/ai/imgtoprompt": {
+      "post": {
+        "tags": ["Artificial Intelligence"],
+        "description": "ImageToPrompt is an AI technology that analyzes an image and generates a descriptive text (prompt). It is commonly used in AI-generated art and computer vision to understand and describe visual elements. This allows users to extract prompts from images and create similar versions using AI models.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The image file to be uploaded and analyzed."
+                  }
+                },
+                "required": ["image"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/stalk/mlstalk": {
+      "get": {
+        "tags": ["Stalk"],
+        "description": "mlStalk is a function designed to retrieve basic information about a Mobile Legends user. It works by sending a userId to a specific API endpoint, which then returns details about the user, such as their username or other relevant data. The function processes the API response and returns the user information in an object format.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "zone",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/igdl": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "Instagram Downloader is a function used to download media (such as photos, videos, or reels) from Instagram. It works by taking an Instagram post URL as input, sending a request to an API or scraper, and retrieving the direct download links for the media. The function then returns the extracted media in a usable format.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/threadsdl": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "Threads Downloader is a tool or application that allows users to download videos, images, or other content from the Threads social media platform. Threads is a text and image-based app developed by Meta (Instagram) for sharing thoughts, discussions, and visual media. This tool is commonly used to save or repost content from Threads without needing to take screenshots or screen recordings.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/douyindl": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "Douyin Downloader is a tool or application that allows users to download videos from Douyin, the Chinese version of TikTok. This tool enables users to save videos in high quality, often without a watermark.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/pinterestdl": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "Pinterest Downloader is a tool or application that allows users to download images, videos, or GIFs from Pinterest. This tool enables users to save content from Pinterest to their devices in high quality.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/mediafire": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "MediaFire Downloader is a cloud storage service that allows users to upload, store, and share files online. It offers free and paid plans with features like direct download links, multi-device access, and secure file sharing. Premium users get faster downloads, larger file limits, and an ad-free experience.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/fbdownload": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "Facebook Downloader is a tool or app used to download videos or other content from Facebook. It allows users to save videos, images, or audio to their device for offline viewing. It’s simple to use, enabling quick downloads with just a few steps. However, users should be mindful of copyright rules and Facebook's guidelines when using such tools.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/generator/brat": {
+      "get": {
+        "tags": ["Generator"],
+        "description": "Brat sticker is a digital sticker with the word 'brat' in white, using a simple lowercase font, and a transparent background. Its minimalist aesthetic makes it popular on TikTok.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/generator/remini": {
+      "get": {
+        "tags": ["Generator"],
+        "description": "Remini is an artificial intelligence (AI) technology used to enhance image quality by sharpening, restoring, and removing noise from blurry or low-resolution photos. This technology utilizes deep learning to recover lost details, clarify facial features, and automatically improve colors and contrast. Remini is widely applied in various fields, such as photography, image restoration, and visual processing in the creative industry.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/generator/qc": {
+      "get": {
+        "tags": ["Generator"],
+        "description": "QC (Quote Creator) is a feature that converts text quotes into images with a stylish design. It typically includes elements like the author's name, custom fonts, and backgrounds to enhance the visual appeal.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {            
+            "name": "name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {        
+            "name": "photo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/tiktok": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "TikTok Downloader is a service that allows users to download TikTok videos without a watermark easily. Simply paste the video link and choose a download format like MP4 or MP3. Popular sites include SSSTikTok, SnapTik, and TikMate.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/capcut": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "Capcut Downloader is a function used to download videos or content from CapCut. It typically works by taking a video URL as input, sending a request to an API or scraping service, and retrieving the downloadable video file. The function then processes the response and returns the video link or file buffer for the user.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/downloader/spotifydl": {
+      "get": {
+        "tags": ["Downloader"],
+        "description": "Spotify Downloader is a website or tool that allows users to easily and quickly download songs from Spotify. With this service, users can save their favorite songs to listen to offline anytime without needing an internet connection. Additionally, SPOTIFYDL offers easy access without the need for extra apps, making it more practical and flexible.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/stalk/npmstalk": {
+      "get": {
+        "tags": ["Stalk"],
+        "description": "npmStalk is a function used to retrieve information about an NPM package. It works by sending a request to the NPM registry API with the package name and returning details such as the package version, author, dependencies, download stats, and other metadata. This function is useful for checking package details before installation or for monitoring updates.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/stalk/githubstalk": {
+      "get": {
+        "tags": ["Stalk"],
+        "description": "githubStalk is a function used to retrieve information about a GitHub user. It works by sending a request to the GitHub API with a username and returning details such as the user's name, bio, repositories, followers, following, and other public profile data. This function is useful for checking user activity and contributions on GitHub.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/stalk/nikparser": {
+      "get": {
+        "tags": ["Stalk"],
+        "description": "nik-parser is a JavaScript library designed to validate and extract detailed information from Indonesia's National Identification Number (NIK). It can analyze the NIK structure to determine the province, city/regency, district, postal code, gender, birth date, and a unique individual code. This makes it useful for applications that require identity verification and demographic data extraction.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/generator/ssweb": {
+      "get": {
+        "tags": ["Generator"],
+        "description": "SSWeb (Screenshot Website) is the process of capturing a screenshot of a website page to document its appearance or for visualization purposes. This technique is often used to save images of a page or monitor changes in the website's layout.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/generator/ainsfw": {
+      "get": {
+        "tags": ["Generator"],
+        "description": "aiNSFW is an AI system designed to detect and filter NSFW (Not Safe For Work) content, such as explicit or inappropriate images. It is widely used in automated moderation systems to prevent the spread of sensitive content on digital platforms.",
+        "parameters": [
+          {
+            "name": "prompt",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/generator/htmltopng": {
+      "get": {
+        "tags": ["Generator"],
+        "description": "HTMLToPNG is an asynchronous function that converts HTML code into a PNG image by sending an HTTP POST request to an external service. This function is used to automatically transform HTML layouts into images without the need for manual screenshots, making it useful for saving web design previews, generating dynamic images from HTML content, or creating visual documentation of rendered pages.",
+        "parameters": [
+          {
+            "name": "html",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/generator/txt2img": {
+      "get": {
+        "tags": ["Generator"],
+        "description": "txt2img is an AI technology that generates images from text descriptions. Models like Stable Diffusion and DALL·E transform text into visuals based on trained image data patterns. This technology is useful for design, illustration, and content creation without requiring drawing skills.",
+        "parameters": [
+          {
+            "name": "prompt",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/search/tiktoksearch": {
+      "get": {
+        "tags": ["Search"],
+        "description": "TikTok Search is a video search service for TikTok that can be accessed through various platforms, including TikWM (tikwm.com). This site provides an API that allows users to search for TikTok videos by keywords and retrieve download links for videos with or without watermarks, music, covers, and creator avatars.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/search/rule34search": {
+      "get": {
+        "tags": ["Search"],
+        "description": "Rule34 is an internet rule that means if an anime or manga character exists, there is NSFW or adult content of it. This concept is popular in fandom communities and is often associated with fan art, doujinshi, or other fan-created works in the form of illustrations and media.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/search/jadwalsholat": {
+      "get": {
+        "tags": ["Search"],
+        "description": "Jadwalsholat is a web-based service that provides prayer time schedules for various regions in Indonesia. Through this website, users can view daily, weekly, or monthly prayer times based on their selected location. Additionally, some prayer schedule services offer extra features such as prayer reminders, Qibla direction, and an Islamic calendar to help Muslims perform their religious duties more consistently.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/search/youtubesearch": {
+      "get": {
+        "tags": ["Search"],
+        "description": "YT-Search or YouTubeSearch is a JavaScript library used to search for videos on YouTube directly through code without requiring the official YouTube API. This library is commonly used in the development of bots or applications that need a YouTube video search feature without obtaining an API key from Google.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/search/lyricssearch": {
+      "get": {
+        "tags": ["Search"],
+        "description": "SearchLyrics is a feature provided by Google that allows users to view song lyrics directly in the search results when they look up a specific song or its lyrics. This feature uses Google Search to retrieve and display lyrics from official sources, such as Musixmatch and other licensed lyric providers. By integrating these sources, Google ensures that users can quickly and easily access accurate lyrics without needing to visit additional websites.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/search/sfilesearch": {
+      "get": {
+        "tags": ["Search"],
+        "description": "SFILESEARCH is a file search feature available on the sfile.mobi platform. Users can enter keywords to search for files uploaded by other members. This service allows free file sharing.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/search/wikipedia": {
+      "get": {
+        "tags": ["Search"],
+        "description": "Wikipedia is a free online encyclopedia that anyone can edit. Launched in 2001 by Jimmy Wales and Larry Sanger, it is managed by the Wikimedia Foundation and is available in over 300 languages. Wikipedia relies on volunteer contributions to create its articles and remains a major source of information on the internet.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/cai/bocchi": {
+      "get": {
+        "tags": ["Character AI"],
+        "description": "Bocchi Hitori, also known as Bocchi, is the main character of the anime Bocchi the Rock! She is a shy and socially awkward girl who dreams of becoming a famous guitarist. Despite her amazing guitar skills, she struggles with social interactions and often experiences anxiety. However, after joining Kessoku Band, she slowly starts stepping out of her comfort zone and learning to work with her friends.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/cai/umaru": {
+      "get": {
+        "tags": ["Character AI"],
+        "description": "Umaru, or commonly known as Umaru-chan, is the main character of the anime Himouto! Umaru-chan. Outside, she appears to be a perfect girl—beautiful, smart, and talented. However, once she gets home, she completely transforms into a lazy, childish version of herself, spending her time playing games, eating junk food, and whining to her older brother. This dual personality is what makes her unique and amusing.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/cai/shiro": {
+      "get": {
+        "tags": ["Character AI"],
+        "description": "shiro is a little sister who is clingy, random, and expressive. she often relies on her older brother, whines a lot, and changes moods quickly. when she's annoyed or feeling lazy, she frequently uses the -_- emoji. even though she can be a bit frustrating, she actually cares a lot and just wants attention.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/cai/prompt-ai": {
+      "get": {
+        "tags": ["Character AI"],
+        "description": "prompt-ai is a system that allows clients or users to create and customize prompts according to their needs. with prompt-ai, users can request specific prompts along with their desired queries, enabling the ai to respond with a particular style, personality, or format. this system is useful for creating a more personalized interaction experience, such as character chatbots, virtual assistants, or custom conversation scenarios.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/tools/tobase64": {
+      "get": {
+        "tags": ["Tools"],
+        "description": "toBase64 is a function that converts plain text into Base64 format using Buffer. Base64 is used to encode binary data into text, making it safe for transmission in formats like URLs or JSON.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/tools/frombase64": {
+      "get": {
+        "tags": ["Tools"],
+        "description": "fromBase64 is a function that does the opposite—it decodes a Base64 string back into its original text. This is useful for reading data that was previously encoded in Base64.",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/tools/detectporn": {
+      "get": {
+        "tags": ["Tools"],
+        "description": "Porn detection is the process of identifying images or videos containing adult content using AI and Computer Vision. Common techniques include CNN (Convolutional Neural Networks), skin detection, and pre-trained models like NSFWJS, DeepAI NSFW API, or Google Cloud Vision. It is used for content moderation and digital safety.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/tools/subdofinder": {
+      "get": {
+        "tags": ["Tools"],
+        "description": "SubdoFinder is a tool for discovering subdomains of a main domain, used in pentesting and cybersecurity. It utilizes brute-force, passive enumeration, and active scanning to identify hidden subdomains that may pose security risks.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/tts/elevenlabs": {
+      "get": {
+        "tags": ["Text To Speech"],
+        "description": "ElevenLabs is a technology company that develops AI-powered text-to-speech (TTS) solutions, known for their highly realistic and natural-sounding voices that can mimic human accents, intonations, and emotions, making them ideal for applications such as audiobooks, dubbing, narration, virtual assistants, gaming, and film production, while also supporting multiple languages and offering voice replication technology for content creators and developers.",
+        "parameters": [
+          {
+            "name": "text",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           },
+           {
+            "name": "apiKey",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           },
+           {
+            "name": "voiceId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/tts/list-elevenlabs": {
+      "get": {
+        "tags": ["Text To Speech"],
+        "description": "This endpoint will return a list of voiceIds and voice names from ElevenLabs in JSON format, including the unique voice ID and name, as well as additional details like language and category, which can be used for applications such as narration, dubbing, and AI-powered speech synthesis.",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+              }
+           }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/tts/tts": {
+      "get": {
+        "tags": ["Text To Speech"],
+        "description": "TTS (Text-to-Speech) is a technology that converts written text into spoken audio using voice synthesis. In this tts function, the text is sent to the Sound of Text service, which processes it using Google TTS. The default voice used is en-US (English - United States), but it can be adjusted as needed.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/tts/dakshita": {
+      "get": {
+        "tags": ["Text To Speech"],
+        "description": "Dakshita TTS is one of the services or models developed to convert text into high-quality speech. Although it is not as popular as services like Google TTS, Amazon Polly, or Wavel.ai, this system can be used for various purposes, especially in AI-based voice processing.",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/stats": {
+      "get": {
+        "tags": ["Stats Request"],
+        "description": "API request stats are metrics used to track the number and performance of requests sent to an API over a specific period. These statistics help monitor API usage, detect issues, and optimize performance.",
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    }
+  }
+}
