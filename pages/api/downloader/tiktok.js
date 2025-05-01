@@ -75,12 +75,12 @@ async function tiktok(query) {
       cover: videos.cover || '',
       ai_dynamic_cover: videos.ai_dynamic_cover || '',
       origin_cover: videos.origin_cover || '',
-      duration: videos.duration !== undefined ? formatDuration(videos.duration) : '0:00',
+      duration: videos.duration || 0,
       play: videos.play || '',
       wmplay: videos.wmplay || '',
-      size: videos.size !== undefined ? bytesToMB(videos.size) : '0 MB',       // Dalam MB
-      wm_size: videos.wm_size !== undefined ? bytesToMB(videos.wm_size) : '0 MB',   // Dalam MB
-      hd_size: videos.hd_size !== undefined ? bytesToMB(videos.hd_size) : '0 MB',
+      hdplay: videos.hdplay || '',
+      size: videos.size || 0,
+      wm_size: videos.wm_size || 0,
       music: videos.music || '',
       music_info: {
         id: videos.music_info?.id || '',
@@ -100,6 +100,19 @@ async function tiktok(query) {
       collect_count: videos.collect_count || 0,
       create_time: videos.create_time || 0,
       create_time_formatted: formattedCreateTime,
+      anchors: videos.anchors || null,
+      anchors_extras: videos.anchors_extras || '',
+      is_ad: videos.is_ad ?? false,
+      commerce_info: {
+        adv_promotable: videos.commerce_info?.adv_promotable ?? false,
+        auction_ad_invited: videos.commerce_info?.auction_ad_invited ?? false,
+        branded_content_type: videos.commerce_info?.branded_content_type || 0,
+        organic_log_extra: videos.commerce_info?.organic_log_extra || '',
+        with_comment_filter_words: videos.commerce_info?.with_comment_filter_words ?? false
+      },
+      commercial_video_info: videos.commercial_video_info || '',
+      item_comment_settings: videos.item_comment_settings || 0,
+      mentioned_users: videos.mentioned_users || '',
       author: {
         id: videos.author?.id || '',
         unique_id: videos.author?.unique_id || '',
