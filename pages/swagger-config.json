@@ -1,21 +1,18 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Xavier Api",
-    "description": "Welcome to the Xavier Api, your gateway to streamlined and efficient application integration. Designed with simplicity and versatility in mind, Xavier Api empowers developers to effortlessly manage and interact with essential data and functionalities. Whether you're building a web application, mobile app, or integrating with other services, Laurine Api provides a robust foundation for seamless operations.",
-    "contact": {
-      "email": "https://t.me/FVendettaV"
-    },
+    "title": "JYSYNC",
+    "description": "Welcome to the JYSYNC Api, your gateway to streamlined and efficient application integration. Designed with simplicity and versatility in mind, Xavier Api empowers developers to effortlessly manage and interact with essential data and functionalities. Whether you're building a web application, mobile app, or integrating with other services, Laurine Api provides a robust foundation for seamless operations.",
     "license": {
       "name": "API Development Information",
-      "url": "https://whatsapp.com/channel/0029VbACugX6rsQyHw0Wvr1g"
+      "url": "https://whatsapp.com/"
     },
     "version": "1.0"
   },
   "servers": [
     {
-      "url": "https://japi.vercel.app",
-      "description": "Xavier Api"
+      "url": "https://japi-eta.vercel.app/",
+        "description": "JYSYNC API"
     }
   ],
   "paths": {
