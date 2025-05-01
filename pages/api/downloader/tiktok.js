@@ -66,7 +66,7 @@ async function tiktok(query) {
 
     // Konversi create_time ke format yang mudah dibaca
     if (result.create_time) {
-      result.create_time = formatUnixTime(result.create_time);
+      result.create_time = customFormat(result.create_time);
     }
 
     // Jika Anda ingin format khusus seperti "YYYY-MM-DD HH:mm:ss"
