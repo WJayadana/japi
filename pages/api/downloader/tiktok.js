@@ -55,36 +55,60 @@ async function tiktok(query) {
       data: encodedParams
     });
 
-    // Ambil semua data dari respons API
-    let result = response.data.data;
+    // Ambil data video dari respons API
+    const videos = response.data.data;
 
     // Fungsi untuk mengonversi Unix timestamp ke format tanggal dan waktu
     function formatUnixTime(unixTimestamp) {
       const date = new Date(unixTimestamp * 1000); // Konversi ke milidetik
-      return date.toLocaleString(); // Format sesuai lokal pengguna (misal: "5/1/2025, 8:45:20 PM")
+      return date.toLocaleString(); // Contoh output: "5/1/2025, 8:45:20 PM"
     }
 
-    // Konversi create_time ke format yang mudah dibaca
-    if (result.create_time) {
-      result.create_time = customFormat(result.create_time);
-    }
+    // Format create_time jika tersedia
+    const formattedCreateTime = videos.create_time ? formatUnixTime(videos.create_time) : null;
 
-    // Jika Anda ingin format khusus seperti "YYYY-MM-DD HH:mm:ss"
-    function customFormat(unixTimestamp) {
-      const date = new Date(unixTimestamp * 1000);
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
-      const hours = String(date.getHours()).padStart(2, '0');
-      const minutes = String(date.getMinutes()).padStart(2, '0');
-      const seconds = String(date.getSeconds()).padStart(2, '0');
-      return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-    }
+    // Menyusun hasil secara eksplisit satu per satu
+    const result = {
+      id: videos.id || '',
+      region: videos.region || '',
+      title: videos.title || '',
+      cover: videos.cover || '',
+      ai_dynamic_cover: videos.ai_dynamic_cover || '',
+      origin_cover: videos.origin_cover || '',
+      duration: videos.duration !== undefined ? formatDuration(videos.duration) : '0:00',
+      play: videos.play || '',
+      wmplay: videos.wmplay || '',
+      size: videos.size !== undefined ? bytesToMB(videos.size) : '0 MB',       // Dalam MB
+      wm_size: videos.wm_size !== undefined ? bytesToMB(videos.wm_size) : '0 MB',   // Dalam MB
+      hd_size: videos.hd_size !== undefined ? bytesToMB(videos.hd_size) : '0 MB',
+      music: videos.music || '',
+      music_info: {
+        id: videos.music_info?.id || '',
+        title: videos.music_info?.title || '',
+        play: videos.music_info?.play || '',
+        cover: videos.music_info?.cover || '',
+        author: videos.music_info?.author || '',
+        original: videos.music_info?.original ?? false,
+        duration: videos.music_info?.duration || 0,
+        album: videos.music_info?.album || ''
+      },
+      play_count: videos.play_count || 0,
+      digg_count: videos.digg_count || 0,
+      comment_count: videos.comment_count || 0,
+      share_count: videos.share_count || 0,
+      download_count: videos.download_count || 0,
+      collect_count: videos.collect_count || 0,
+      create_time: videos.create_time || 0,
+      create_time_formatted: formattedCreateTime,
+      author: {
+        id: videos.author?.id || '',
+        unique_id: videos.author?.unique_id || '',
+        nickname: videos.author?.nickname || '',
+        avatar: videos.author?.avatar || ''
+      },
+      images: videos.images || []
+    };
 
-    // Gunakan format khusus jika diinginkan
-    // result.create_time = customFormat(result.create_time);
-
-    // Sekarang result berisi semua data dari API dengan create_time yang telah diformat
     console.log(result);
 
     return result;
