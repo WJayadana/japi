@@ -30,14 +30,6 @@
             }
           },
           {
-            "name": "keyorkut",
-            "required": true,
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "apiKey",
             "required": true,
             "in": "query",
