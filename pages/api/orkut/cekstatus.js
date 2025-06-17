@@ -27,14 +27,6 @@ export default async function handler(req, res) {
             error: 'Missing merchant parameter' 
         });
     }
-    
-    if (!keyorkut) {
-        return res.status(400).json({
-            status: false, 
-            creator: CREATOR, 
-            error: 'Missing keyorkut parameter' 
-        });
-    }
 
     if (!apiKey) {
         return res.status(400).json({ 
