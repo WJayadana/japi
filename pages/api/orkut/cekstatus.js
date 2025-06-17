@@ -46,7 +46,7 @@ export default async function handler(req, res) {
 
     try {
         await trackRequest("/api/orkut/cekstatus");
-        const apiUrl = `https://gateway.okeconnect.com/api/mutasi/qris/${merchant}/${keyorkut}`;
+        const apiUrl = `https://gateway.okeconnect.com/api/mutasi/qris/${merchant}/${apikey}`;
         const response = await axios.get(apiUrl);
         const result = await response.data;
 
